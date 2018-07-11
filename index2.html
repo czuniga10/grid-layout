@@ -5,22 +5,36 @@
     <title>CSS Grid</title>
     <style>
 
-        .wrapper{
+    .wrapper{
+        display: grid;
+        /* grid-template-columns: 1fr 1fr 1fr; */
+
+        grid-template-columns:repeat(3, 1fr);
+
+        grid-gap: 1em;
+        /* grid-auto-rows:100px;*/
+        grid-auto-rows: minmax(100px, auto);
+
+        }
+
+        .nested {
             display: grid;
-            /* grid-template-columns: 1fr 1fr 1fr; */
-
             grid-template-columns:repeat(3, 1fr);
-
+            grid-auto-rows: 70px;
             grid-gap: 1em;
-            grid-auto-rows:100px;
-            
-            }
+        
+        }
+
         .wrapper > div{
             background:#eee;
             padding:1em;
         }
         .wrapper > div:nth-child(odd){
             background:#ddd;
+        }
+        .nested > div{
+            border:#333 1px solid;
+            padding: 1em;
         }
     </style>
 </head>
@@ -30,10 +44,18 @@
             Lorem ipsum dolor sit.
         </div>
         <div>
-            Lorem ipsum dolor sit.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo quia eveniet recusandae dicta ducimus ipsam blanditiis assumenda omnis alias mollitia quisquam delectus doloremque, aliquid qui? Iste, atque, quam tempora suscipit delectus odit sequi illo ducimus quasi temporibus dolore repudiandae deleniti.
         </div>
-        <div>
-            Lorem ipsum dolor sit.
+        <div class="nested">
+            <div>Lorem</div>
+            <div>Lorem</div> 
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div> 
+            <div>Lorem</div>            
+            <div>Lorem</div> 
+            <div>Lorem</div>
+            <div>Lorem</div>                                      
         </div>
         <div>
             Lorem ipsum dolor sit.
